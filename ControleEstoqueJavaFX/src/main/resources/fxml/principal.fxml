@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.controleestoque.controller.PrincipalController"
+            stylesheets="@../css/style.css">
+
+    <top>
+        <HBox styleClass="header-bar" spacing="20" alignment="CENTER_LEFT">
+            <Label text="Controle de Estoque"/>
+            <HBox HBox.hgrow="ALWAYS"/>
+            <Button text="Categorias" styleClass="btn-secundario" onAction="#abrirCategorias"/>
+            <Button text="Produtos" styleClass="btn-secundario" onAction="#abrirProdutos"/>
+            <Button text="Movimentações" styleClass="btn-secundario" onAction="#abrirMovimentacoes"/>
+            <Button text="Atualizar" styleClass="btn-primario" onAction="#atualizarPainel"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+            <VBox spacing="20" style="-fx-padding: 20;">
+
+                <GridPane hgap="16" vgap="16">
+                    <columnConstraints>
+                        <javafx.scene.layout.ColumnConstraints percentWidth="20"/>
+                        <javafx.scene.layout.ColumnConstraints percentWidth="20"/>
+                        <javafx.scene.layout.ColumnConstraints percentWidth="20"/>
+                        <javafx.scene.layout.ColumnConstraints percentWidth="20"/>
+                        <javafx.scene.layout.ColumnConstraints percentWidth="20"/>
+                    </columnConstraints>
+
+                    <VBox styleClass="card" GridPane.columnIndex="0">
+                        <Label text="Total de produtos" styleClass="card-title"/>
+                        <Label fx:id="lblTotalProdutos" text="0" styleClass="card-value"/>
+                    </VBox>
+
+                    <VBox styleClass="card" GridPane.columnIndex="1">
+                        <Label text="Produtos ativos" styleClass="card-title"/>
+                        <Label fx:id="lblProdutosAtivos" text="0" styleClass="card-value"/>
+                    </VBox>
+
+                    <VBox styleClass="card" GridPane.columnIndex="2">
+                        <Label text="Itens em estoque" styleClass="card-title"/>
+                        <Label fx:id="lblTotalItens" text="0" styleClass="card-value"/>
+                    </VBox>
+
+                    <VBox styleClass="card" GridPane.columnIndex="3">
+                        <Label text="Produtos com estoque baixo" styleClass="card-title"/>
+                        <Label fx:id="lblEstoqueBaixo" text="0" styleClass="card-value alerta"/>
+                    </VBox>
+
+                    <VBox styleClass="card" GridPane.columnIndex="4">
+                        <Label text="Valor estimado do estoque" styleClass="card-title"/>
+                        <Label fx:id="lblValorEstoque" text="R\$ 0,00" styleClass="card-value"/>
+                    </VBox>
+                </GridPane>
+
+                <VBox styleClass="card" spacing="10">
+                    <Label text="Produtos com estoque baixo" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+                    <TableView fx:id="tabelaEstoqueBaixo" prefHeight="180">
+                        <columns>
+                            <TableColumn fx:id="colBaixoCodigo" text="Código" prefWidth="100"/>
+                            <TableColumn fx:id="colBaixoNome" text="Produto" prefWidth="220"/>
+                            <TableColumn fx:id="colBaixoEstoque" text="Estoque" prefWidth="90"/>
+                            <TableColumn fx:id="colBaixoMinimo" text="Estoque mínimo" prefWidth="120"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <VBox styleClass="card" spacing="10">
+                    <Label text="Últimas movimentações" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+                    <TableView fx:id="tabelaUltimasMovimentacoes" prefHeight="220">
+                        <columns>
+                            <TableColumn fx:id="colMovData" text="Data" prefWidth="150"/>
+                            <TableColumn fx:id="colMovProduto" text="Produto" prefWidth="220"/>
+                            <TableColumn fx:id="colMovTipo" text="Tipo" prefWidth="90"/>
+                            <TableColumn fx:id="colMovQuantidade" text="Quantidade" prefWidth="100"/>
+                            <TableColumn fx:id="colMovObservacao" text="Observação" prefWidth="220"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

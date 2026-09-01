@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.controleestoque.controller.ProdutosController"
+            stylesheets="@../css/style.css">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT">
+            <Label text="Cadastro de Produtos"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="16" style="-fx-padding: 20;">
+
+            <VBox styleClass="card" spacing="10">
+                <GridPane hgap="12" vgap="8">
+                    <columnConstraints>
+                        <javafx.scene.layout.ColumnConstraints minWidth="120"/>
+                        <javafx.scene.layout.ColumnConstraints minWidth="180" hgrow="ALWAYS"/>
+                        <javafx.scene.layout.ColumnConstraints minWidth="120"/>
+                        <javafx.scene.layout.ColumnConstraints minWidth="180" hgrow="ALWAYS"/>
+                    </columnConstraints>
+
+                    <Label text="Código" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtCodigo" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Categoria" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                    <ComboBox fx:id="cboCategoria" maxWidth="Infinity" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                    <Label text="Nome" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtNome" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+                    <Label text="Preço de compra" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtPrecoCompra" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Preço de venda" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+                    <TextField fx:id="txtPrecoVenda" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+
+                    <Label text="Estoque mínimo" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtEstoqueMinimo" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="Estoque atual" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+                    <Label fx:id="lblEstoqueAtual" text="0 (definido pelas movimentações)"
+                           GridPane.rowIndex="3" GridPane.columnIndex="3" style="-fx-text-fill: #6b7280;"/>
+                </GridPane>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button text="Salvar" styleClass="btn-primario" onAction="#salvar"/>
+                    <Button text="Novo" styleClass="btn-secundario" onAction="#novo"/>
+                    <Button fx:id="btnAtivarDesativar" text="Desativar" styleClass="btn-perigo" onAction="#alternarSituacao"/>
+                    <HBox HBox.hgrow="ALWAYS"/>
+                    <TextField fx:id="txtPesquisa" promptText="Pesquisar por código ou nome..." prefWidth="240"/>
+                    <Button text="Pesquisar" styleClass="btn-secundario" onAction="#pesquisar"/>
+                    <Button text="Listar todos" styleClass="btn-secundario" onAction="#listarTodos"/>
+                </HBox>
+
+                <Label fx:id="lblMensagem" style="-fx-text-fill: #c0392b;"/>
+            </VBox>
+
+            <VBox styleClass="card" VBox.vgrow="ALWAYS">
+                <TableView fx:id="tabela" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colCodigo" text="Código" prefWidth="90"/>
+                        <TableColumn fx:id="colNome" text="Nome" prefWidth="200"/>
+                        <TableColumn fx:id="colCategoria" text="Categoria" prefWidth="120"/>
+                        <TableColumn fx:id="colPrecoCompra" text="Preço compra" prefWidth="100"/>
+                        <TableColumn fx:id="colPrecoVenda" text="Preço venda" prefWidth="100"/>
+                        <TableColumn fx:id="colEstoque" text="Estoque" prefWidth="80"/>
+                        <TableColumn fx:id="colEstoqueMinimo" text="Mínimo" prefWidth="80"/>
+                        <TableColumn fx:id="colAtivo" text="Ativo" prefWidth="70"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

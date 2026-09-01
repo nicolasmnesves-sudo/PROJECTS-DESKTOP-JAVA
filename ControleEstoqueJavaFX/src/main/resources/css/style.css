@@ -1,0 +1,72 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f4f6f8;
+}
+
+.header-bar {
+    -fx-background-color: #1f5fa8;
+    -fx-padding: 14 20 14 20;
+}
+
+.header-bar .label {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 6, 0, 0, 2);
+}
+
+.card-title {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7280;
+}
+
+.card-value {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f5fa8;
+}
+
+.card-value.alerta {
+    -fx-text-fill: #c0392b;
+}
+
+.btn-primario {
+    -fx-background-color: #1f5fa8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.btn-primario:hover {
+    -fx-background-color: #174a86;
+}
+
+.btn-secundario {
+    -fx-background-color: #e5e7eb;
+    -fx-text-fill: #1f2937;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.btn-perigo {
+    -fx-background-color: #c0392b;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.linha-estoque-baixo {
+    -fx-background-color: #fdecea;
+}
+
+.table-view {
+    -fx-background-color: white;
+}

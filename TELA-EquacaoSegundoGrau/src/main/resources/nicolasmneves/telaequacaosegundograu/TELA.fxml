@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nicolasmneves.telaequacaosegundograu.Controller">
+   <children>
+      <Label layoutX="13.0" layoutY="22.0" prefHeight="30.0" prefWidth="308.0" text="EQUAÇÃO DE SEGUNDO GRAU">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="64.0" text="Digite o valor de A:" />
+      <Label layoutX="14.0" layoutY="115.0" text="Digite o valor de B:" />
+      <Label layoutX="13.0" layoutY="171.0" text="Digite o valor de C:" />
+      <TextField fx:id="numA" layoutX="14.0" layoutY="82.0" prefHeight="26.0" prefWidth="279.0" />
+      <TextField fx:id="numB" layoutX="15.0" layoutY="133.0" prefHeight="26.0" prefWidth="279.0" />
+      <TextField fx:id="numC" layoutX="15.0" layoutY="187.0" prefHeight="26.0" prefWidth="279.0" />
+      <Button layoutX="14.0" layoutY="245.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="26.0" prefWidth="279.0" text="CALCULAR" />
+      <Label fx:id="lblResultado" layoutX="15.0" layoutY="291.0" prefHeight="156.0" prefWidth="279.0" wrapText="true">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atividade25.TelaPrincipalController">
+    <children>
+        <Button layoutX="131.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnVerificarCancelamento" text="Verificar cancelamento" />
+        <Label layoutX="42.0" layoutY="14.0" text="Você não deseja cancelar a operação?">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <RadioButton fx:id="rdbSimCancelar" layoutX="104.0" layoutY="147.0" mnemonicParsing="false" text="Sim">
+            <toggleGroup>
+                <ToggleGroup fx:id="cancelar" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton layoutX="253.0" layoutY="147.0" mnemonicParsing="false" text="Não" toggleGroup="$cancelar" />
+        <Label fx:id="lblResultado" alignment="CENTER" layoutX="5.0" layoutY="291.0" prefHeight="103.0" prefWidth="389.0" wrapText="true">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="104.0" layoutY="98.0" text="Você deseja cancelar a operação?">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

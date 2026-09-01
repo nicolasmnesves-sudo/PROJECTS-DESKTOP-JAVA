@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="720.0" prefWidth="960.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nicolasmneves.sistemadecontroletanqueindustrial.TanqueController">
+
+    <!-- ===================== CABEÇALHO (FIXO NO TOPO) ===================== -->
+    <VBox layoutX="0.0" layoutY="0.0" styleClass="header-bar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <padding>
+            <Insets bottom="16" left="24" right="24" top="16" />
+        </padding>
+        <Label styleClass="header-title" text="PAINEL DIDÁTICO - TANQUE INDUSTRIAL" />
+        <Label styleClass="header-subtitle" text="Simulação didática | Sem CLP, sem hardware e sem banco de dados" />
+    </VBox>
+
+    <!-- ===================== CONTEÚDO PRINCIPAL (OCUPA O RESTANTE) ===================== -->
+    <HBox spacing="20.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="85.0">
+
+        <!-- ============ COLUNA ESQUERDA: LEITURAS & HISTÓRICO ============ -->
+        <VBox prefWidth="480.0" spacing="16.0" HBox.hgrow="ALWAYS">
+
+            <!-- ÁREA 1: LEITURAS -->
+            <VBox spacing="14.0" styleClass="card">
+                <padding>
+                    <Insets bottom="16" left="16" right="16" top="16" />
+                </padding>
+
+                <Label styleClass="card-title" text="Leituras do Sistema" />
+
+                <GridPane hgap="12" vgap="12">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="110.0" prefWidth="120.0" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                    </columnConstraints>
+
+                    <Label styleClass="field-label" text="Operador:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="txtOperador" promptText="Nome do operador" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label styleClass="field-label" text="Temperatura (°C):" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="txtTemperatura" promptText="Ex: 72.5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label styleClass="field-label" text="Nível (%):" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="txtNivel" promptText="Ex: 18" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                </GridPane>
+
+                <HBox spacing="10.0">
+                    <Button fx:id="btnProcessar" maxWidth="Infinity" onAction="#onProcessar" styleClass="btn-primary" text="Processar" HBox.hgrow="ALWAYS" />
+                    <Button fx:id="btnLimpar" maxWidth="Infinity" onAction="#onLimpar" styleClass="btn-secondary" text="Limpar" HBox.hgrow="ALWAYS" />
+                    <Button fx:id="btnSair" maxWidth="Infinity" onAction="#onSair" styleClass="btn-secondary" text="Sair" HBox.hgrow="ALWAYS" />
+                </HBox>
+
+                <Label fx:id="lblCondicao" maxWidth="Infinity" styleClass="condicao-box" text="Aguardando leituras..." wrapText="true" />
+            </VBox>
+
+            <!-- ÁREA 2: REGISTRO DE EVENTOS -->
+            <VBox spacing="10.0" styleClass="card" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets bottom="16" left="16" right="16" top="16" />
+                </padding>
+
+                <Label styleClass="card-title" text="Registro de Eventos" />
+                <ListView fx:id="lstEventos" VBox.vgrow="ALWAYS" />
+            </VBox>
+
+        </VBox>
+
+        <!-- ============ COLUNA DIREITA: ACIONAMENTOS ============ -->
+        <VBox prefWidth="400.0" spacing="16.0" styleClass="card" HBox.hgrow="ALWAYS">
+            <padding>
+                <Insets bottom="16" left="16" right="16" top="16" />
+            </padding>
+
+            <Label styleClass="card-title" text="Controle de Acionamentos" />
+
+            <!-- Bomba -->
+            <VBox spacing="6.0" styleClass="control-group">
+                <Label styleClass="group-label" text="Bomba de Entrada" />
+                <HBox spacing="10.0">
+                    <Button fx:id="btnLigarBomba" maxWidth="Infinity" onAction="#onLigarBomba" styleClass="btn-action-on" text="Ligar" HBox.hgrow="ALWAYS" />
+                    <Button fx:id="btnDesligarBomba" maxWidth="Infinity" onAction="#onDesligarBomba" styleClass="btn-action-off" text="Desligar" HBox.hgrow="ALWAYS" />
+                </HBox>
+                <Label fx:id="lblStatusBomba" maxWidth="Infinity" styleClass="status-box, status-off" text="BOMBA: DESLIGADA" alignment="CENTER" />
+            </VBox>
+
+            <!-- Ventilador -->
+            <VBox spacing="6.0" styleClass="control-group">
+                <Label styleClass="group-label" text="Ventilador de Resfriamento" />
+                <HBox spacing="10.0">
+                    <Button fx:id="btnLigarVentilador" maxWidth="Infinity" onAction="#onLigarVentilador" styleClass="btn-action-on" text="Ligar" HBox.hgrow="ALWAYS" />
+                    <Button fx:id="btnDesligarVentilador" maxWidth="Infinity" onAction="#onDesligarVentilador" styleClass="btn-action-off" text="Desligar" HBox.hgrow="ALWAYS" />
+                </HBox>
+                <Label fx:id="lblStatusVentilador" maxWidth="Infinity" styleClass="status-box, status-off" text="VENTILADOR: DESLIGADO" alignment="CENTER" />
+            </VBox>
+
+            <!-- Válvula -->
+            <VBox spacing="6.0" styleClass="control-group">
+                <Label styleClass="group-label" text="Válvula de Escoamento" />
+                <HBox spacing="10.0">
+                    <Button fx:id="btnAbrirValvula" maxWidth="Infinity" onAction="#onAbrirValvula" styleClass="btn-action-on" text="Abrir" HBox.hgrow="ALWAYS" />
+                    <Button fx:id="btnFecharValvula" maxWidth="Infinity" onAction="#onFecharValvula" styleClass="btn-action-off" text="Fechar" HBox.hgrow="ALWAYS" />
+                </HBox>
+                <Label fx:id="lblStatusValvula" maxWidth="Infinity" styleClass="status-box, status-off" text="VÁLVULA: FECHADA" alignment="CENTER" />
+            </VBox>
+
+            <!-- Spacer para empurrar o botão de emergência para o fundo -->
+            <VBox VBox.vgrow="ALWAYS" />
+
+            <!-- Emergência -->
+            <Button fx:id="btnEmergencia" maxWidth="Infinity" minHeight="45.0" onAction="#onEmergencia" styleClass="btn-emergencia" text="PARADA DE EMERGÊNCIA" />
+
+        </VBox>
+
+    </HBox>
+
+</AnchorPane>

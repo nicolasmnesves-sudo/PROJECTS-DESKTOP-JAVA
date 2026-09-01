@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="292.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nicolasmneves.telametadesemaior02.bntController">
+   <children>
+      <Label layoutX="96.0" layoutY="14.0" text="VERIFICAÇÃO">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="67.0" layoutY="44.0" prefHeight="39.0" prefWidth="186.0" text="Se o número for maior do que 20 ele sera dividido pela metade." textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="110.0" layoutY="109.0" text="Digite um número:" />
+      <TextField fx:id="num" layoutX="65.0" layoutY="142.0" prefHeight="26.0" prefWidth="186.0" />
+      <Button layoutX="66.0" layoutY="175.0" mnemonicParsing="false" onAction="#ButtonClick1" prefHeight="26.0" prefWidth="186.0" text="CALCULAR" />
+      <Label fx:id="result" layoutX="65.0" layoutY="220.0" prefHeight="20.0" prefWidth="186.0">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

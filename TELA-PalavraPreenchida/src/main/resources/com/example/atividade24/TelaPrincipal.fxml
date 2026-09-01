@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.atividade24.TelaPricipalController">
+    <children>
+        <Label layoutX="119.0" layoutY="22.0" text="Palavra preenchida">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Label>
+        <Button layoutX="150.0" layoutY="175.0" mnemonicParsing="false" onAction="#btnVerificarPalavra"
+                text="Verificar Palavra"/>
+        <Label layoutX="14.0" layoutY="95.0" text="Digite uma palavra:"/>
+        <Label fx:id="lblResultado" alignment="CENTER" layoutX="10.0" layoutY="269.0" prefHeight="117.0"
+               prefWidth="382.0">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="txtPalavra" layoutX="126.0" layoutY="91.0"/>
+    </children>
+</AnchorPane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nicolasmneves.boletimescolar.BoletimEscolarController">
+    <children>
+        <TextArea fx:id="listaArea" layoutX="354.0" layoutY="76.0" prefHeight="310.0" prefWidth="215.0" />
+        <Button fx:id="limparButton" layoutX="477.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleLimpar" prefHeight="26.0" prefWidth="92.0" text="Limpar" />
+        <Button fx:id="removerButton" layoutX="354.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleRemover" prefHeight="26.0" prefWidth="111.0" text="Remover" />
+        <Separator layoutX="290.0" orientation="VERTICAL" prefHeight="511.0" prefWidth="62.0" />
+        <TextField fx:id="nomeField" layoutX="32.0" layoutY="76.0" prefHeight="26.0" prefWidth="111.0" promptText="Nome" />
+        <TextField fx:id="nota1Field" layoutX="32.0" layoutY="132.0" prefHeight="26.0" prefWidth="111.0" promptText="Nota 1" />
+        <TextField fx:id="nota3Field" layoutX="32.0" layoutY="171.0" prefHeight="26.0" prefWidth="111.0" promptText="Nota 3" />
+        <TextField fx:id="nota2Field" layoutX="166.0" layoutY="132.0" prefHeight="26.0" prefWidth="111.0" promptText="Nota 2" />
+        <TextField fx:id="nota4Field" layoutX="166.0" layoutY="171.0" prefHeight="26.0" prefWidth="111.0" promptText="Nota 4" />
+        <Label layoutX="83.0" layoutY="23.0" text="Boletim Escolar">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Button fx:id="calcularButton" layoutX="32.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleCalcular" prefHeight="26.0" prefWidth="246.0" text="Calcular" />
+        <TextArea fx:id="resultadoArea" layoutX="32.0" layoutY="291.0" prefHeight="94.0" prefWidth="246.0" />
+        <Button fx:id="adicionarButton" layoutX="32.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleAdicionar" prefHeight="26.0" prefWidth="136.0" text="Adicionar Resultado" />
+        <Button fx:id="resumoButton" layoutX="178.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleGerarResumo" prefHeight="26.0" prefWidth="100.0" text="Gerar Resumo" />
+        <Spinner fx:id="frequenciaSpinner" layoutX="99.0" layoutY="214.0" prefHeight="26.0" prefWidth="111.0" />
+        <Label layoutX="32.0" layoutY="219.0" text="Frequencia: " />
+        <TextField fx:id="turmaField" layoutX="166.0" layoutY="76.0" prefHeight="26.0" prefWidth="111.0" promptText="Turma" />
+    </children>
+</AnchorPane>
