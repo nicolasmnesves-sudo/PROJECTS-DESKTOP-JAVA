@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="249.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nicolasmneves.telanumpositivonegativonull.bntController">
+   <children>
+      <Label layoutX="56.0" layoutY="14.0" text="CLASSIFICAÇÃO DE NÚMERO">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="122.0" layoutY="79.0" text="Digite um número:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="111.0" layoutY="41.0" text="Positivo, negativo ou nulo" />
+      <TextField fx:id="txtNumero" layoutX="58.0" layoutY="105.0" prefHeight="26.0" prefWidth="248.0" />
+      <Button fx:id="bntClassificar" layoutX="58.0" layoutY="138.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="26.0" prefWidth="248.0" text="CLASSIFICAR" />
+      <Label fx:id="lblResult" layoutX="93.0" layoutY="181.0" prefHeight="26.0" prefWidth="177.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

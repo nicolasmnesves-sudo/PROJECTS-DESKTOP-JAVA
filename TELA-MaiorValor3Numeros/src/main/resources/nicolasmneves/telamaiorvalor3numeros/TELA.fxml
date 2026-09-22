@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nicolasmneves.telamaiorvalor3numeros.bntController">
+   <children>
+      <Label layoutX="80.0" layoutY="14.0" text="Maior entre Três Números">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="83.0" layoutY="65.0" text="Digite o primeiro número:" />
+      <Label layoutX="83.0" layoutY="129.0" text="Digite o segundo número:" />
+      <Label layoutX="86.0" layoutY="189.0" text="Digite o terceiro número:" />
+      <TextField fx:id="txtNum1" layoutX="83.0" layoutY="83.0" prefHeight="26.0" prefWidth="247.0" />
+      <TextField fx:id="txtNum2" layoutX="83.0" layoutY="147.0" prefHeight="26.0" prefWidth="247.0" />
+      <TextField fx:id="txtNum3" layoutX="83.0" layoutY="206.0" prefHeight="26.0" prefWidth="247.0" />
+      <Button fx:id="bntCalcular" layoutX="84.0" layoutY="242.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="26.0" prefWidth="247.0" text="Encontrar..." />
+      <Label fx:id="lblResult" layoutX="94.0" layoutY="275.0" prefHeight="90.0" prefWidth="228.0" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

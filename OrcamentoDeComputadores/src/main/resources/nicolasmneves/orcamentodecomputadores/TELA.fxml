@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nicolasmneves.orcamentodecomputadores.Controller">
+   <children>
+      <Label layoutX="157.0" layoutY="28.0" />
+
+      <Label layoutX="67.0" layoutY="62.0" text="Nome:" />
+      <!-- : ComboBox do Perfil -->
+      <ComboBox fx:id="cbPerfil" layoutX="110.0" layoutY="91.0" prefWidth="150.0" />
+      <!-- : ComboBox da Placa Mãe -->
+      <ComboBox fx:id="cbPlacaMae" layoutX="110.0" layoutY="174.0" prefWidth="150.0" promptText="Placa Mãe" />
+      <!-- : ComboBox do Processador -->
+      <ComboBox fx:id="cbProcessador" layoutX="110.0" layoutY="208.0" prefWidth="150.0" promptText="Processador" />
+      <!-- : ComboBox da Placa de Vídeo -->
+      <ComboBox fx:id="cbPlacaVideo" layoutX="110.0" layoutY="243.0" prefWidth="150.0" promptText="Placa de Vídeo" />
+      <!-- : ComboBox da Memória RAM -->
+      <ComboBox fx:id="cbMemoriaRam" layoutX="110.0" layoutY="276.0" prefWidth="150.0" promptText="Memoria Ram" />
+      <!-- : ComboBox do Armazenamento -->
+      <ComboBox fx:id="cbArmazenamento" layoutX="110.0" layoutY="311.0" prefWidth="150.0" promptText="Armazenamento" />
+      <!-- : ComboBox do Gabinete -->
+      <ComboBox fx:id="cbGabinete" layoutX="110.0" layoutY="345.0" prefWidth="150.0" promptText="Gabinete" />
+      <!-- : ComboBox da Fonte -->
+      <ComboBox fx:id="cbFonte" layoutX="110.0" layoutY="378.0" prefWidth="150.0" promptText="Fonte" />
+
+
+      <Label layoutX="88.0" layoutY="131.0" />
+      <CheckBox fx:id="chkRecomendado" layoutX="43.0" layoutY="130.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="254.0" text="Configuração recomendada para seu perfil" />
+
+      <TextField fx:id="txtCliente" layoutX="111.0" layoutY="58.0" />
+      <Label layoutX="73.0" layoutY="95.0" text="Perfil:" />
+
+
+
+
+
+
+      <Label layoutX="74.0" layoutY="15.0" text="Orçamento de Computadores" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="137.0" layoutY="432.0" mnemonicParsing="false" onAction="#btnVerOrcamento_Click" text="Ver Orçamento" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nicolasmneves.teladeaprovado.CalcularMediaFunction">
+   <children>
+      <Label layoutX="89.0" layoutY="14.0" text="MEDIA DE ALUNO">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font></Label>
+      <Label layoutX="74.0" layoutY="74.0" text="Nome:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="74.0" layoutY="131.0" text="Nota 1:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="73.0" layoutY="163.0" text="Nota 2:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="73.0" layoutY="195.0" text="Nota 3:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNome" layoutX="151.0" layoutY="72.0" />
+      <TextField fx:id="txtNota1" layoutX="152.0" layoutY="129.0" />
+      <TextField fx:id="txtNota2" layoutX="152.0" layoutY="161.0" />
+
+      <TextField fx:id="txtNota3" layoutX="151.0" layoutY="193.0" />
+
+      <Button fx:id="bntCalcularMedia" layoutX="72.0" layoutY="237.0" mnemonicParsing="false" onAction="#bntCalcularMedia" prefHeight="26.0" prefWidth="231.0" text="CALCULAR MÉDIA">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="37.0" layoutY="273.0" text="Resultado:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblResultado" layoutX="37.0" layoutY="335.0" prefHeight="18.0" prefWidth="213.0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblResultadoAR" layoutX="54.0" layoutY="295.0" prefHeight="40.0" prefWidth="342.0">
+         <font>
+            <Font name="System Bold Italic" size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="329.0" prefWidth="238.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nicolasmneves.telacomprarcarronovo.Controller">
+   <children>
+      <Label layoutX="65.0" layoutY="14.0" text="Carro Novo">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="chxQuerCarro" layoutX="20.0" layoutY="78.0" mnemonicParsing="false" text="Possuo diploma de ensino superior" />
+      <CheckBox fx:id="chxTemDinheiro" layoutX="20.0" layoutY="109.0" mnemonicParsing="false" text="Tenho dinheiro suficiente" />
+      <Label layoutX="58.0" layoutY="35.0" text="Marque para confirmar" />
+      <Button layoutX="20.0" layoutY="137.0" mnemonicParsing="false" onAction="#verificarPermissao" prefHeight="26.0" prefWidth="198.0" text="Verificar" />
+      <Label fx:id="lblVerificar" layoutX="25.0" layoutY="193.0" prefHeight="99.0" prefWidth="198.0" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

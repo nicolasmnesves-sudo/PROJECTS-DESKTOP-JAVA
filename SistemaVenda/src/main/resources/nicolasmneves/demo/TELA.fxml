@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nicolasmneves.demo.Controller">
+   <children>
+      <Label layoutX="85.0" layoutY="14.0" text="Sistema de Vendas">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCliente" layoutX="29.0" layoutY="75.0" prefHeight="26.0" prefWidth="262.0" promptText="Nome" />
+      <TextField fx:id="txtProduto" layoutX="29.0" layoutY="122.0" prefHeight="26.0" prefWidth="262.0" promptText="Produto" />
+      <TextField fx:id="txtValorUnitario" layoutX="29.0" layoutY="173.0" prefHeight="26.0" prefWidth="262.0" promptText="Valor Unitario" />
+      <Spinner fx:id="nudQuantidade" editable="true" layoutX="29.0" layoutY="226.0" prefHeight="26.0" prefWidth="262.0" />
+      <RadioButton fx:id="radDinheiro" layoutX="27.0" layoutY="301.0" mnemonicParsing="false" text="Dinheiro" />
+      <RadioButton fx:id="radPix" layoutX="102.0" layoutY="301.0" mnemonicParsing="false" text="Pix" />
+      <RadioButton fx:id="radDebito" layoutX="151.0" layoutY="301.0" mnemonicParsing="false" text="Debito" />
+      <RadioButton fx:id="radCredito" layoutX="217.0" layoutY="301.0" mnemonicParsing="false" text="Credito" />
+
+      <Button layoutX="39.0" layoutY="416.0" mnemonicParsing="false" onAction="#handleCalcular" prefHeight="26.0" prefWidth="262.0" text="Calcular" />
+
+      <Label layoutX="30.0" layoutY="59.0" text="Informe seu nome abaixo:">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="107.0" text="Informe o nome do produto abaixo:">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font></Label>
+      <Label layoutX="32.0" layoutY="158.0" text="Informe o valor por unidade desse produto:">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font></Label>
+      <Label layoutX="29.0" layoutY="285.0" text="Escolha uma forma de pagamento:">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font></Label>
+      <Label layoutX="29.0" layoutY="352.0" text="Serviços adicionais:">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Label>
+      <Separator layoutX="-6.0" layoutY="333.0" prefHeight="11.0" prefWidth="340.0" />
+      <Separator layoutY="267.0" prefHeight="11.0" prefWidth="340.0" />
+      <Separator layoutY="398.0" prefHeight="4.0" prefWidth="340.0" />
+      <Label layoutX="30.0" layoutY="211.0" text="Informe a quantidade:">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Label>
+
+      <CheckBox fx:id="chkGarantia" layoutX="24.0" layoutY="367.0" mnemonicParsing="false" text="Garantia" />
+      <CheckBox fx:id="chkEntrega" layoutX="101.0" layoutY="367.0" mnemonicParsing="false" text="Entrega" />
+   </children>
+</AnchorPane>

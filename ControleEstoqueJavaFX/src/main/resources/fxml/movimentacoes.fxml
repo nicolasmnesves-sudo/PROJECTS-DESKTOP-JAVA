@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.controleestoque.controller.MovimentacoesController"
+            stylesheets="@../css/style.css">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT">
+            <Label text="Movimentações de Estoque"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="16" style="-fx-padding: 20;">
+
+            <VBox styleClass="card" spacing="10">
+                <GridPane hgap="12" vgap="8">
+                    <columnConstraints>
+                        <javafx.scene.layout.ColumnConstraints minWidth="100"/>
+                        <javafx.scene.layout.ColumnConstraints minWidth="220" hgrow="ALWAYS"/>
+                        <javafx.scene.layout.ColumnConstraints minWidth="100"/>
+                        <javafx.scene.layout.ColumnConstraints minWidth="180" hgrow="ALWAYS"/>
+                    </columnConstraints>
+
+                    <Label text="Produto" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="cboProduto" maxWidth="Infinity"
+                              GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+                    <Label text="Tipo" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <HBox spacing="16" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                        <RadioButton fx:id="rbEntrada" text="Entrada" selected="true">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="tipoGroup"/>
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rbSaida" text="Saída" toggleGroup="$tipoGroup"/>
+                    </HBox>
+
+                    <Label text="Quantidade" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                    <TextField fx:id="txtQuantidade" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+                    <Label text="Observação" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextArea fx:id="txtObservacao" prefRowCount="2"
+                              GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+                </GridPane>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button text="Registrar movimentação" styleClass="btn-primario" onAction="#registrar"/>
+                    <Button text="Limpar" styleClass="btn-secundario" onAction="#limparFormulario"/>
+                    <Label fx:id="lblEstoqueProdutoSelecionado" style="-fx-text-fill: #6b7280;"/>
+                </HBox>
+
+                <Label fx:id="lblMensagem" style="-fx-text-fill: #c0392b;"/>
+            </VBox>
+
+            <VBox styleClass="card" spacing="10">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Filtrar por produto:"/>
+                    <ComboBox fx:id="cboFiltroProduto" prefWidth="220"/>
+                    <Label text="Período:"/>
+                    <DatePicker fx:id="dpInicio" promptText="Início"/>
+                    <DatePicker fx:id="dpFim" promptText="Fim"/>
+                    <Button text="Filtrar" styleClass="btn-secundario" onAction="#filtrar"/>
+                    <Button text="Limpar filtro" styleClass="btn-secundario" onAction="#limparFiltro"/>
+                </HBox>
+            </VBox>
+
+            <VBox styleClass="card" VBox.vgrow="ALWAYS">
+                <TableView fx:id="tabela" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colData" text="Data" prefWidth="150"/>
+                        <TableColumn fx:id="colProduto" text="Produto" prefWidth="200"/>
+                        <TableColumn fx:id="colTipo" text="Tipo" prefWidth="90"/>
+                        <TableColumn fx:id="colQuantidade" text="Quantidade" prefWidth="100"/>
+                        <TableColumn fx:id="colObservacao" text="Observação" prefWidth="240"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

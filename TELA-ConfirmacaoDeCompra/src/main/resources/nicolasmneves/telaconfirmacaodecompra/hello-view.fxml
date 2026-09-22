@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="254.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nicolasmneves.telaconfirmacaodecompra.Controller">
+    <children>
+        <Label layoutX="35.0" layoutY="14.0" text="Confirmação de Compra">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font></Label>
+        <Label layoutX="36.0" layoutY="51.0" text="Deseja confimar a compra?" />
+        <CheckBox fx:id="chxConfirmar" layoutX="35.0" layoutY="69.0" mnemonicParsing="false" text="Eu desejo" />
+        <Button fx:id="bntResult" layoutX="35.0" layoutY="101.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="26.0" prefWidth="183.0" text="Resultado" />
+        <Label fx:id="lblResult" layoutX="44.0" layoutY="168.0" prefHeight="76.0" prefWidth="146.0" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font name="System Bold Italic" size="15.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atividade23.TelaPrincipalController">
+   <children>
+      <Label layoutX="113.0" layoutY="14.0" text="Clube de benefícios">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="86.0" layoutY="66.0" text="Você não é um membro inativo?">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rdbSim" layoutX="86.0" layoutY="113.0" mnemonicParsing="false" text="Sim">
+         <toggleGroup>
+            <ToggleGroup fx:id="membro" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="272.0" layoutY="113.0" mnemonicParsing="false" text="Não" toggleGroup="$membro" />
+      <Button layoutX="147.0" layoutY="188.0" mnemonicParsing="false" onAction="#btnVerificarInscricao" text="Verificar inscrição" />
+      <Label fx:id="lblResultado" alignment="CENTER" layoutX="7.0" layoutY="270.0" prefHeight="123.0" prefWidth="384.0" wrapText="true">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nicolasmneves.estacionamento.EstacionamentoController">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+    </padding>
+
+    <HBox spacing="10.0" alignment="CENTER_LEFT">
+        <Label text="Placa:"/>
+        <TextField fx:id="txtPlaca" prefWidth="100.0"/>
+        <Label text="Modelo:"/>
+        <TextField fx:id="txtModelo" prefWidth="120.0"/>
+        <Label text="Tipo:"/>
+        <ComboBox fx:id="cboTipoVeiculo" prefWidth="120.0"/>
+    </HBox>
+
+    <HBox spacing="10.0" alignment="CENTER_LEFT">
+        <Label text="Entrada:"/>
+        <DatePicker fx:id="dpEntrada" prefWidth="130.0"/>
+        <TextField fx:id="txtHoraEntrada" prefWidth="40.0" promptText="HH"/>
+        <TextField fx:id="txtMinEntrada" prefWidth="40.0" promptText="mm"/>
+
+        <Label text="Saída:"/>
+        <DatePicker fx:id="dpSaida" prefWidth="130.0"/>
+        <TextField fx:id="txtHoraSaida" prefWidth="40.0" promptText="HH"/>
+        <TextField fx:id="txtMinSaida" prefWidth="40.0" promptText="mm"/>
+    </HBox>
+
+    <HBox spacing="10.0" alignment="CENTER_LEFT">
+        <TextField fx:id="txtPesquisarPlaca" promptText="Pesquisar placa..." prefWidth="150.0"/>
+        <Button text="Pesquisar" onAction="#btnPesquisarClick"/>
+        <Button text="Mostrar Todos" onAction="#btnMostrarTodosClick"/>
+        <Separator orientation="VERTICAL"/>
+        <Button text="Registrar Entrada" onAction="#btnRegistrarEntradaClick"/>
+        <Button text="Registrar Saída" onAction="#btnRegistrarSaidaClick"/>
+        <Button text="Remover" onAction="#btnRemoverClick"/>
+        <Button text="Limpar" onAction="#btnLimparClick"/>
+    </HBox>
+
+    <TableView fx:id="dgvVeiculos" VBox.vgrow="ALWAYS" prefHeight="300.0">
+        <columns>
+            <TableColumn fx:id="colPlaca" text="Placa" prefWidth="90.0"/>
+            <TableColumn fx:id="colModelo" text="Modelo" prefWidth="110.0"/>
+            <TableColumn fx:id="colTipo" text="Tipo" prefWidth="90.0"/>
+            <TableColumn fx:id="colEntrada" text="Entrada" prefWidth="130.0"/>
+            <TableColumn fx:id="colSaida" text="Saída" prefWidth="130.0"/>
+            <TableColumn fx:id="colHoras" text="Horas" prefWidth="60.0"/>
+            <TableColumn fx:id="colValor" text="Valor" prefWidth="80.0"/>
+            <TableColumn fx:id="colSituacao" text="Situação" prefWidth="100.0"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="20.0" alignment="CENTER_RIGHT" style="-fx-font-weight: bold;">
+        <Label text="Estacionados:"/>
+        <Label fx:id="lblEstacionados" text="0" style="-fx-text-fill: blue;"/>
+        <Label text="Finalizados:"/>
+        <Label fx:id="lblFinalizados" text="0" style="-fx-text-fill: green;"/>
+        <Label text="Total Recebido:"/>
+        <Label fx:id="lblTotalRecebido" text="R$ 0,00" style="-fx-text-fill: darkgreen;"/>
+    </HBox>
+</VBox>

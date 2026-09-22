@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.controleestoque.controller.CategoriasController"
+            stylesheets="@../css/style.css">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT">
+            <Label text="Cadastro de Categorias"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="16" style="-fx-padding: 20;">
+
+            <VBox styleClass="card" spacing="10">
+                <Label text="Nome da categoria"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="txtNome" promptText="Ex.: Informática" HBox.hgrow="ALWAYS"/>
+                    <Button text="Salvar" styleClass="btn-primario" onAction="#salvar"/>
+                    <Button text="Novo" styleClass="btn-secundario" onAction="#novo"/>
+                    <Button text="Excluir" styleClass="btn-perigo" onAction="#excluir"/>
+                </HBox>
+                <Label fx:id="lblMensagem" style="-fx-text-fill: #c0392b;"/>
+            </VBox>
+
+            <VBox styleClass="card" VBox.vgrow="ALWAYS">
+                <TableView fx:id="tabela" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                        <TableColumn fx:id="colNome" text="Nome" prefWidth="300"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

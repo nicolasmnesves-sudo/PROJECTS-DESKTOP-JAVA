@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="316.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nicolasmneves.telaimparoupar.HelloController">
+   <children>
+      <Label layoutX="95.0" layoutY="22.0" text="IMPAR OU PAR">
+         <font>
+            <Font name="System Bold" size="39.0" />
+         </font>
+      </Label>
+      <TextField fx:id="lblNumero" layoutX="89.0" layoutY="113.0" prefHeight="26.0" prefWidth="294.0" />
+      <Label layoutX="89.0" layoutY="95.0" text="Digite um número para verifica-lo se ele é impar ou par" />
+      <Label fx:id="lblResultado" layoutX="191.0" layoutY="217.0" prefHeight="64.0" prefWidth="126.0">
+         <font>
+            <Font name="Arial Bold Italic" size="32.0" />
+         </font>
+      </Label>
+      <Button fx:id="bntVerificar" layoutX="89.0" layoutY="147.0" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="26.0" prefWidth="294.0" text="VERIFICAR" />
+   </children>
+</AnchorPane>
